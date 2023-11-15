@@ -17,4 +17,12 @@ pipeline {
                 sh 'python -m nose2'
             }
         }
+        stage("report"){
+            steps {
+                sh 'python -m coverage report'
+                sh 'python -m coverage xml'
+                sh 'python -m coverage html'
+            }
+        }
     }
+}
