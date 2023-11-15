@@ -14,7 +14,7 @@ pipeline {
         }
         stage("test"){
             steps {
-                sh 'python -m nose2'
+                sh 'python -m coverage run -m nose2'
             }
         }
         stage("report"){
